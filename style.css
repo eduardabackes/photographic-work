@@ -3,6 +3,8 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;  /* Light background */
     color: black;
+    margin: 0;
+    padding: 0;
 }
 
 /* Header Styles */
@@ -26,11 +28,18 @@ header p {
 .gallery {
     margin: 50px auto;
     padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 }
 
 .card {
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .card img {
@@ -40,7 +49,7 @@ header p {
     transition: transform 0.3s ease-in-out;
 }
 
-.card img:hover {
+.card:hover {
     transform: scale(1.05);
 }
 
@@ -50,15 +59,13 @@ header p {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
     width: 100%;
     height: 100%;
-    bottom: 0;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: 50px;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
 .photo-detail-content {
@@ -66,36 +73,101 @@ header p {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
+    max-width: 90%;
+    max-height: 85%;
+    overflow-y: auto;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-#photo-caption, #photo-location {
+
+/* BotÃ£o de fechar estilizado */
+.photo-detail-content button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.photo-detail-content button:hover {
+    background-color: red;
+}
+
+/* SMS Send Section */
+.sms-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 350px;
+    margin: 40px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.sms-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.sms-container input,
+.sms-container textarea {
+    width: 100%;
+    padding: 10px;
     margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     font-size: 16px;
+}
+
+.sms-container button {
+    background: blue;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.sms-container button:hover {
+    background: darkblue;
+}
+
+#status {
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 /* Footer Styles */
 footer {
-    margin-top: auto;
-    font: arial;
     text-align: center;
-    background-color: transparent;
     font-size: 1.2em;
-    padding: 10px 0;
+    padding: 20px 0;
+    background: #f9f9f9;
     color: rgb(59, 55, 55);
+    margin-top: 40px;
 }
 
-footer p {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin: 0;
-}
-
-/* Responsive Layout for Gallery */
+/* Responsive Layout */
 @media (max-width: 768px) {
     .gallery {
         padding: 10px;
     }
+
     .card {
         margin-bottom: 15px;
+    }
+
+    .photo-detail-content {
+        max-width: 95%;
+    }
+
+    .sms-container {
+        width: 90%;
     }
 }

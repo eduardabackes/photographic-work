@@ -10,6 +10,7 @@ function showDetails(photoId, caption, location) {
 
     // Show the photo detail popup
     photoDetail.style.display = 'flex';
+}
 function hideDetails() {
     // Close the photo detail popup when clicked outside
    const photoDetail = document.getElementById('photo-detail');
