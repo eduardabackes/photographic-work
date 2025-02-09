@@ -1,173 +1,169 @@
-/* Global Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;  /* Light background */
-    color: black;
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --primary-color: #000000;
+    --secondary-color: #F6F6F6;
+    --tertiary-color: #4c0b89;
+    --hover-color: #272727;
+
+    --primary-font: 'Krona One', sans-serif;
+    --secondary-font: 'Montserrat', sans-serif;
+}
+
+*{
     margin: 0;
     padding: 0;
 }
 
-/* Header Styles */
-header {
-    text-align: center;
-    margin-top: 50px;
+body{
+    box-sizing: border-box;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
-header h1 {
-    font-size: 3em;
-    font-weight: bold;
-    color: black;
+.header{
+    padding: 2% 0% 0% 15%;
 }
 
-header p {
-    font-size: 1.5em;
-    color: black;
-}
-
-/* Photo Gallery Styles */
-.gallery {
-    margin: 50px auto;
-    padding: 20px;
+.header__menu{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    gap: 80px;
 }
 
-.card {
-    border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    border-radius: 8px;
+.header__menu__link{
+    font-family: var(--secondary-font);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--tertiary-color);
+    text-decoration: none;
+}
+
+.presentation{
+    padding: 5% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.presentation__content{
+    width: 615px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.presentation__content__title{
+    font-size: 36px;
+    font-family: var(--primary-font);
+}
+
+.highlight-title{
+    color: var(--tertiary-color);
+}
+
+.presentation__content__text{
+    font-size: 24px;
+    font-family: var(--secondary-font);
+}
+
+.presentation__links__subtitle {
+    font-family: var(--primary-font);
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.presentation__links__link:hover {
+    background-color: var(--hover-color);
+}
+
+
+/* Carousel */
+.image-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Set the maximum size of the image */
+    margin: 0 auto;
     overflow: hidden;
 }
 
-.card img {
+.carousel-image {
     width: 100%;
     height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
+    display: block;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.card:hover {
-    transform: scale(1.05);
-}
-
-/* Photo Detail Popup */
-.photo-detail {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
+.carousel-nav {
+    position: absolute;
+    top: 50%;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-nav button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
     color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-nav button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.footer {
+    color: var(--primary-color);
+    background-color: var(--tertiary-color);
+    padding: 12px 24px;  /* Adjusts the footer padding */
+    font-family: var(--secondary-font);
+    display: flex;          /* Using flexbox to align the items */
+    justify-content: center;  /* Centers content inside the footer */
+    align-items: center;    /* Aligns items vertically */
+    flex-direction: column; /* Organizes items in column (text and links) */
+}
+
+.footer__content {
+    display: flex;
+    align-items: center;    /* Ensures the links and text are aligned in the center */
+    gap: 10px;              /* Adds spacing between links and text */
+}
+
+.footer__text {
+    font-size: 14px;         /* Reduces the font size */
+    font-weight: 400;
+}
+
+.presentation__links {
+    display: flex;
+    justify-content: center; /* Centers the links */
+    gap: 10px;               /* Reduces space between links */
+}
+
+.presentation__links__link {
+    display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
-}
-
-.photo-detail-content {
-    background: white;
-    padding: 20px;
+    gap: 5px;                /* Reduces space between the icon and text */
+    border: 2px solid var(--tertiary-color);
+    width: auto;
+    text-align: center;
     border-radius: 8px;
-    text-align: center;
-    max-width: 90%;
-    max-height: 85%;
-    overflow-y: auto;
-    color: black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 14px;         /* Reduces the font size of the links */
+    padding: 6px 12px;       /* Reduces padding to make links more compact */
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
 }
 
-/* BotÃ£o de fechar estilizado */
-.photo-detail-content button {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s;
+.presentation__links__link:hover {
+    background-color: var(--hover-color);
 }
 
-.photo-detail-content button:hover {
-    background-color: red;
-}
-
-/* SMS Send Section */
-.sms-container {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 350px;
-    margin: 40px auto;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.sms-container h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.sms-container input,
-.sms-container textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.sms-container button {
-    background: blue;
-    color: white;
-    border: none;
-    padding: 10px;
-    width: 100%;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background 0.3s;
-}
-
-.sms-container button:hover {
-    background: darkblue;
-}
-
-#status {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-/* Footer Styles */
-footer {
-    text-align: center;
-    font-size: 1.2em;
-    padding: 20px 0;
-    background: #f9f9f9;
-    color: rgb(59, 55, 55);
-    margin-top: 40px;
-}
-
-/* Responsive Layout */
-@media (max-width: 768px) {
-    .gallery {
-        padding: 10px;
-    }
-
-    .card {
-        margin-bottom: 15px;
-    }
-
-    .photo-detail-content {
-        max-width: 95%;
-    }
-
-    .sms-container {
-        width: 90%;
-    }
+.presentation__links__link img {
+    filter: brightness(0) invert(1);  /* This makes the icons turn white */
 }

@@ -1,106 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eduarda Backes Köche's Photographic Works</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="bg-light">
-    <header class="custom-header">
-        <div class="container d-flex justify-content-between align-items-center">
-            <a href="index.html">
-                <img src="logo.png" alt="Logo" class="logo">
-            </a>
-            <a href="aboutme.html" class="detalhes-link">aboutme</a>
-        </div>
-    </header>
-    <!-- Header Section with Name --> 
-    <div class="text-center my-5">
-        <h1 class="display-3 font-weight-bold text-dark">Eduarda Backes Köche's Photographic Works</h1>
-        <p class="lead text-dark">Life was made to be recorded</p>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-    <!-- Photo Gallery Section -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 mb-4" onclick="showDetails(1, 'October, in Southern Italy', 'Southern Italy')">
-                <div class="card">
-                    <img src="italia1.jpg" alt="Photo 1" class="card-img-top">
-                </div>
-            </div>
-            <div class="col-md-4 mb-4" onclick="showDetails('August, in Southern Italy')">
-                <div class="card">
-                    <img src="italia3.jpg" alt="Photo 2" class="card-img-top">
-                </div>
-            </div>
-            <div class="col-md-4 mb-4" onclick="showDetails('April, in Southern Brazil, my hometown')">
-                <div class="card">
-                    <img src="rs.jpg" alt="Photo 3" class="card-img-top">
-                </div>
-            </div>
-            <div class="col-md-4 mb-4" onclick="showDetails('September, in Cascais, Portugal')">
-                <div class="card">
-                    <img src="portugal2.jpg" alt="Photo 4" class="card-img-top">
-                </div>
-            </div>
-            <div class="col-md-4 mb-4" onclick="showDetails('May, in Barcelona, Spain')">
-                <div class="card">
-                    <img src="spain.jpg" alt="Photo 5" class="card-img-top">
-                </div>
-            </div>
-            <div class="col-md-4 mb-4" onclick="showDetails('May, in Costa Brava, Spain')">
-                <div class="card">
-                    <img src="spain2.jpg" alt="Photo 6" class="card-img-top">
-                </div>
-            </div>
-            <div class="col-md-4 mb-4" onclick="showDetails('January, in Southern Italy')">
-                <div class="card">
-                    <img src="italia4.jpg" alt="Photo 7" class="card-img-top">
-                </div>
-            </div>
-            <div class="col-md-4 mb-4" onclick="showDetails('December, in a waterfall in Southern Brazil')">
-                <div class="card">
-                    <img src="r.jpg" alt="Photo 8" class="card-img-top">
-                </div>
-            </div>
-            <div class="col-md-4 mb-4" onclick="showDetails('May, in a lovely beach located in Costa Brava, Spain ')">
-                <div class="card">
-                    <img src="spain3.jpg" alt="Photo 9" class="card-img-top">
-                </div>
-            </div>
-            <div class="col-md-4 mb-4" onclick="showDetails('August, rainy day in Paris, France')">
-                <div class="card">
-                    <img src="france.jpg" alt="Photo 10" class="card-img-top">
-                </div>
-            </div>
-        </div>
-    </div>
+    <body>
+        <header class="header">
+            <nav class="header__menu">
+                <a class="header__menu__link" href="index.html">Home</a>
+                <a class="header__menu__link" href="about.html">About me</a>
+            </nav>
+        </header>
 
-    <!-- Popup for photo details -->
-    <div id="photo-detail" class="photo-detail">
-        <div class="photo-detail-content">
-            <p id="photo-caption"></p>
-            <p id="photo-location"></p>
-            <button onclick="hideDetails()">Close</button>
-        </div>
-    </div>
-    
-    <!-- Footer Section -->
-    <footer class="text-center mt-5">
-        <p>2024 Creation</p>
-    </footer>
+        <main class="presentation">
+            <section class="presentation__content">
+                <h1 class="presentation__content__title">Eduarda Backes Köche's <strong class="highlight-title">Photographic Works</strong></h1>
+                <p class="presentation__content__text">Life was made to be captured</p>
+            </section>
 
-    <!-- Bootstrap JS and Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+            <!-- Carrossel de imagens - com id para ser manipulado pelo JS -->
+            <div class="image-carousel" id="imageCarousel">
+                <!-- As imagens serão inseridas dinamicamente aqui -->
+            </div>
 
-    <!-- Custom JS -->
-    <script src="script.js"></script>
-</body>
+            <div class="carousel-nav">
+                <button class="prev">&lt;</button> <!-- Botão de navegação anterior -->
+                <button class="next">&gt;</button> <!-- Botão de navegação próxima -->
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__content">
+                <p class="footer__text">Developed by Eduarda Backes Köche.</p>
+                <div class="presentation__links">
+                    <a class="presentation__links__link" href="https://instagram.com/divinedisintegration">
+                        <img src="insta.png" alt="Instagram" width="20" height="20">
+                        <span>Instagram</span>
+                       
+                    </a>
+                    <a class="presentation__links__link" href="https://linkedin.com/in/">
+                        <img src="24b2525587a65f650404177a5afee8ae.png" alt="LinkedIn" width="20" height="20">
+                        <span>Linkedin</span>
+                        
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Custom JS -->
+        <script src="script.js"></script>
+    </body>
+
 </html>
