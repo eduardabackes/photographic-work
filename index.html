@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portfolio</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./styles/style.css">
         <!-- Custom CSS -->
         <link rel="stylesheet" href="style.css">
     </head>
@@ -23,6 +23,7 @@
             <section class="presentation__content">
                 <h1 class="presentation__content__title">Eduarda Backes Köche's <strong class="highlight-title">Photographic Works</strong></h1>
                 <p class="presentation__content__text">Life was made to be captured</p>
+                <button id="contactButton" class="btn-message">Send Message</button>
             </section>
 
             <!-- Carrossel de imagens - com id para ser manipulado pelo JS -->
@@ -31,8 +32,8 @@
             </div>
 
             <div class="carousel-nav">
-                <button class="prev">&lt;</button> <!-- Botão de navegação anterior -->
-                <button class="next">&gt;</button> <!-- Botão de navegação próxima -->
+                <button class="prev"></button> <!-- Botão de navegação anterior -->
+                <button class="next"></button> <!-- Botão de navegação próxima -->
             </div>
         </main>
 
@@ -41,21 +42,32 @@
                 <p class="footer__text">Developed by Eduarda Backes Köche.</p>
                 <div class="presentation__links">
                     <a class="presentation__links__link" href="https://instagram.com/divinedisintegration">
-                        <img src="insta.png" alt="Instagram" width="20" height="20">
-                        <span>Instagram</span>
-                       
+                        <img src="./assets/photo/insta.png" alt="Instagram" width="20" length="20"
                     </a>
-                    <a class="presentation__links__link" href="https://linkedin.com/in/">
-                        <img src="24b2525587a65f650404177a5afee8ae.png" alt="LinkedIn" width="20" height="20">
-                        <span>Linkedin</span>
-                        
+                    <a class="presentation__links__link" href="https://www.linkedin.com/in/eduarda-backes-17ba55216?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+                        <img src="./assets/photo/linkedin.png" alt="LinkedIn" width="20" length="20"
                     </a>
                 </div>
             </div>
         </footer>
 
+        <!-- Popup -->
+        <div class="popup" id="popup">
+            <div class="popup__content">
+                <button class="popup__close" id="popupCloseBtn">&times;</button>
+                <h2>Send a Message</h2>
+                <form id="messageForm">
+                    <label for="messageText">Your Message:</label>
+                    <textarea id="messageText" name="messageText" rows="4" placeholder="Enter your message..."></textarea>
+                    <button type="submit" class="btn-message">Send Message</button>
+                </form>
+                <p id="popupResponse"></p>
+            </div>
+        </div>
+
         <!-- Custom JS -->
-        <script src="script.js"></script>
+        <script src="./js/script.js"></script>
+        <script src="./js/popUpScript.js"></script>
     </body>
 
 </html>
